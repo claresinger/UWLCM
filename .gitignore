@@ -1,0 +1,12 @@
+# Compiled files
+##################
+build/
+*.c
+*.h
+*.o
+
+# Data files
+##################
+*.h5
+*.xmf
+*.dat

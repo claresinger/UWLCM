@@ -41,16 +41,15 @@ int main(int ac, char** av)
   set<string> opts_micro({
 //    "--micro=blk_1m --outdir=out_blk_1m",
 //    "--micro=blk_2m --outdir=out_blk_2m",
-    "--adv_serial=false --async=true --micro=lgrngn --outdir=out_lgrngn --backend=CUDA --sd_conc=32 --sstp_cond=1 --z_rlx_sclr=100 --sstp_coal=1"  
-    " --coal=false"
-      " --out_wet=\""
+    "--adv_serial=false --async=true --micro=lgrngn --outdir=lgr_r0.1_n1000 --backend=OpenMP --case=dycoms --rd1=0.1e-6 --n1_stp=1000e6 --sd_conc=128 --z_rlx_sclr=100 --sstp_coal=1 --sstp_cond=10"  
+    " --out_wet=\""
         ".5e-6:25e-6|0,1,2,3;" // FSSP
         "25e-6:1|0,3;"         // "rain"
-//        + bins_wet_str + // aerosol spectrum (wet)
+        + bins_wet_str + // aerosol spectrum (wet)
         "\""
-//      " --out_dry=\""
-//        + bins_dry_str + // aerosol spectrum (dry)
-//      "\""
+      " --out_dry=\""
+        + bins_dry_str + // aerosol spectrum (dry)
+      "\""
   });
 
   for (auto &opts_m : opts_micro)
