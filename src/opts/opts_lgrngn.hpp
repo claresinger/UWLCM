@@ -179,9 +179,9 @@ void setopts_micro(
     {
       rt_params.cloudph_opts_init.rlx_switch = 1;
       rt_params.cloudph_opts_init.rlx_bins = 100;
-      rt_params.cloudph_opts_init.rlx_sd_per_bin = 400;
-      rt_params.cloudph_opts_init.supstp_rlx = 120 / rt_params.dt; // relaxation every two minutes
-      rt_params.cloudph_opts_init.rlx_timescale = 600; // 10 min
+      rt_params.cloudph_opts_init.rlx_sd_per_bin = 40; // originally 100
+      rt_params.cloudph_opts_init.supstp_rlx = 600 / rt_params.dt; // 10 mins, originally relaxation every two minutes
+      rt_params.cloudph_opts_init.rlx_timescale = 1200; // 20 mins, originally 10 min
 
       // define kappa ranges of user-defined aerosol distros
       std::pair<thrust_real_t, thrust_real_t> user_kpa_rng1, user_kpa_rng2;
